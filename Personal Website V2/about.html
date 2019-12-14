@@ -1,0 +1,85 @@
+<html>
+    <head>
+
+        <link rel="stylesheet" href="style.css">
+        <title>About</title>
+    </head>
+
+    <!-- Nav Bar -->
+    <ul class="nav-bar">
+        <div class="home-nav">
+            <li><a href="index.html">Home
+                    <div class="home-nav-deco"></div>
+                </a>
+            </li>
+        </div>
+        <div class="about-nav">
+            <li><a href="about.html">About
+                    <div class="about-nav-deco active"></div>
+                </a>
+            </li>
+        </div>
+        <div class="experience-nav">
+            <li><a href="experience.html">Research
+                    <div class="experience-nav-deco"></div>
+                </a>
+            </li>
+        </div>
+        <div class="projects-nav">
+            <li><a href="projects.html">Projects
+                    <div class="projects-nav-deco"></div>
+                </a>
+            </li>
+        </div>
+
+        <body>
+
+        <div>
+            <div class="about-bio">
+                <img class = "img-slideshow" src = "image0.jpg" id = "slide" width = "500" height = "400">
+            </div>
+
+            <div class="about-body">
+                <h2>About Me</h2>
+                <p>Welcome! I am a university student studying Philosophy and Economics. I chose this pathway for its transdisciplinary nature, rigor, and capacities for independent study. They each provide me with new avenues of engaging the world. Whether it be understanding the reasons for a recession and how to mitigate its effects, or understanding the game that is language, I find great satisfaction in exploring each subject. </p>
+                <h2>My Interests</h2>
+                <p>I am mainly interested in the economics of inequality and income inequality. For this reason, I'm drawn to thinkers like Thomas Piketty and Joseph Stiglitz. I think that for too long the economy has not been organized to benefit the average worker. For that reason, I plan on working in public policy or some similar field; I want to better the lives of the common worker. </p>
+                <p>In terms of philosophy, I am mainly drawn to phenomenology, deconstruction, and the philosophy of language. Derrida, Heidegger, Quine and Wittgenstein have influenced my thinking the most to this point. I am most interested in Wittgenstein's language game, and how both Derrida and Quine use semantic holism to undermine projects rooted in the servile metaphysics of presence.</p>
+                <p>Beyond academia, I enjoy painting, playing soccer, and cinema.</p>
+                <h2>Background</h2>
+                <p>I grew up in Roseville, CA and attended <a href="https://www.rjuhsd.us/Page/412" target="_blank">Roseville High School</a>. There, I competed on the <a href='https://eyeofthetigernews.com/10075' target="_blank">Academic Decathlon team<a/>, where I was the top-scorer in Economics two years in a row and the top scoring decathlete in my division; served as Online and Opinion editor for the award-winning <a href = "https://eyeofthetigernews.com" target="_blank">Eye of the Tiger News</a>, changing the layout of the website entirely to accommodate modern journalistic practices; and started two clubs: Philosophy club and Economics club. </p>
+            </div>
+        </div>
+
+        <script>
+            var i = 0;
+            var images = [];
+            var time = 3000;
+            for(j =0; j < 7; j++){
+                images[j] = 'img/image'+j+'.jpg';
+            }
+            function changeImg(){
+                document.getElementById("slide").src = images[i];
+                if(i < images.length-1){
+                    i++;
+                }else{
+                    i = 0;
+                }
+                setTimeout("changeImg()",time);
+            }
+            window.addEventListener('load', changeImg);
+        </script>
+        <!-- <div class = "about-likes">
+            <h2>Personal Favourites</h2>
+            <p>Click for my favorite...</p>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Dropdown</button>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+        </div> -->
+</body>
+</html>

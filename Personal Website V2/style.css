@@ -1,0 +1,337 @@
+html,body {
+    margin:0;
+    padding:0;
+}
+
+body {
+    padding-top: 130px;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+li a:hover {
+    -webkit-animation: fadein-main 0.5s;
+    opacity: 0.5;
+}
+.about-bio{
+    float: right;
+    padding: 110px 30px 0px 30px;
+}
+.bio {
+    /* font-family: "Trebuchet MS"; */
+    padding: 20px 30px 0px 30px;
+}
+.about-body{
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+.picture {
+    border-radius: 50%;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    padding: 0px;
+}
+
+.picture img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    background: silver;
+}
+
+.bio h1, h3, h4 {
+    text-align: center;
+    padding: 0;
+    padding-left:0px;
+    font-size: 40;
+}
+
+.bio h1 {
+    padding-top: 30px;
+    font-size: 45px;
+}
+
+.bio h3 {
+    padding-top: 0px;
+    font-family: Sans-Serif;
+    font-size: 24px;
+    font-weight: 100;
+    color: grey;
+}
+
+.home-links {
+    width: 310px;
+    margin: auto;
+}
+.about-likes{
+    padding-left: 20px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.bio li {
+    text-decoration: none;
+    list-style-type: none;
+    display: inline-block;
+
+}
+
+.home-links li a {
+    width: 80px;
+    padding-left: 10px;
+    padding-right: 0px;
+    font-size: 20px;
+}
+.about-li{
+    padding-left: 10px;
+}
+.experience-li{
+    padding-right: 20px;
+}
+.github-nav-home {
+    display: inline-block;
+    margin: auto;
+    padding-top: 10px;
+    width: 66px;
+
+}
+
+.tags{
+    text-align: center;
+    padding-top: 25px;
+    margin: auto;
+    max-width: 300px;
+}
+
+.github-nav-home img{
+    width: 36px;
+    margin: auto;
+}
+
+.github-nav-home img:hover{
+    -webkit-animation: fadein-main 0.5s;
+    opacity: 0.5;
+}
+
+.nav-bar {
+    position: fixed;
+    background: white;
+    width: 100%;
+    top: 0px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS";
+    font-size: 16px;
+}
+
+.nav-bar li {
+    float: left;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-bar li a {
+    width: 70px;
+    padding: 15px 15px;
+}
+
+.about-nav-deco.active{
+    background: rgb(240,50,50);
+}
+
+.experience-nav-deco.active{
+    background: rgb(230,230,0);
+    border-right: 3px solid white;
+    border-left: 3px solid white;
+}
+
+.about-nav-deco, .experience-nav-deco, .projects-nav-deco {
+    padding: 2px;
+    background: white;
+    border-top: 3px solid white;
+    border-right: 12px solid white;
+    border-left: 12px solid white;
+}
+
+.projects-nav-deco.active{
+    background: rgb(50,50,240);
+    border-right: 20px solid white;
+    border-left: 20px solid white;
+}
+
+.img-slideshow {
+   padding:1px;
+   border:3px solid #000000;
+   background-color:#D0D0D0;
+}
+
+.project-container {
+    padding-bottom: 65px;
+    display: flex;
+    font-family: "Trebuchet MS";
+    margin: auto;
+    width: 1200px;
+}
+
+.project-text h2 {
+    display: block;
+    font-size: 35px;
+    color: black;
+    text-align: center;
+}
+
+.project-text-right h4 {
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 100;
+    color: black;
+    text-align: justify;
+}
+
+.project-visual-container {
+    height: inherit;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+}
+
+.app-project-container{
+    padding-left: 100px;
+    padding-bottom: 65px;
+    display: flex;
+    font-family: "Trebuchet MS";
+    margin: auto;
+    width: 1200px;
+    overflow: auto;
+}
+
+/* .project-visual  {
+    display: grid;
+    grid-template-columns: 66px 66px 66px 66px 66px;
+    grid-auto-rows: 10px;
+    grid-column-gap: 10px;
+    grid-row-gap: 5px;
+    height: inherit;
+    width: 370px;
+} */
+
+.fan-project-visual{
+    padding-right: 50px;
+}
+
+
+.project-visual img{
+    -webkit-animation: fadein 0.25s;
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    max-width: 370px;
+}
+
+.project-text {
+    padding: 0px 25px 0px 25px;
+    max-width: 550;
+    display: inline-block;
+
+}
+
+.project-text.right{
+    float: left;
+}
+
+.project-text.left{
+    float: right;
+}
+
+.research-text{
+    float:left;
+}
+
+.research-image{
+    float:right;
+}
+
+.research-container {
+    padding-bottom: 65px;
+    display: flex;
+    font-family: "Trebuchet MS";
+    margin: auto;
+    width: 1200px;
+    overflow: auto;
+}
+
+.research-text-right h4{
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 100;
+    color: black;
+    text-align: justify;
+    padding-top: 50px;
+
+}
+
+.research-visual-container {
+    height: inherit;
+    padding: 10px;
+    padding-top: 60px;
+    align-items: center;
+    display: flex;
+}
+.project-text p {
+    display: block;
+    font-family: sans-serif;
+    font-size: 15px;
+}
