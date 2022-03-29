@@ -1,0 +1,95 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}	% Para caracteres en español
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{multirow,booktabs}
+\usepackage[table]{xcolor}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage[margin=3cm]{geometry}
+\usepackage{amsmath}
+\newlength{\tabcont}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\usepackage{empheq}
+\usepackage{framed}
+\newcommand{\Lagr}{\mathcal{L}}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat = newest}
+\usetikzlibrary{positioning, arrows.meta}
+\usepgfplotslibrary{fillbetween}
+\usepackage{amsmath}
+\colorlet{shadecolor}{orange!15}
+\parindent 0in
+\parskip 12pt
+\geometry{margin=1in, headsep=0.25in}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{reg}{Rule}
+\newtheorem{exer}{Exercise}
+\newtheorem{note}{Note}
+\begin{document}
+	\setcounter{section}{0}
+	\title{Elasticity}
+	\graphicspath{ {./images/} } 
+	\thispagestyle{empty}
+	
+	\begin{center}
+		{\LARGE \bf Labor Supply}\\
+		{\large Economics 100A}\\
+		Winter 2021
+	\end{center}
+	\section{Overview}
+	So far, we have considered economic agents as consumers -- consumers who demand certain goods. But, are consumers also suppliers? Is it the case that consumers both supply and demand? We will set up a very interesting problem which asks this question: the Labor-Leisure problem. 
+	
+	Consider the following: you have some consumer who demands two goods: leisure and some composite good $x$. Let $x$ just be some representative good that the consumer demands. For this model, we want to know how some consumer chooses between supplying their labor and consuming leisure. For simplicity, let's say that time is spent either working (represented in hours by $L$) or not working (represented in hours by $Le$). In a 24-hour window, then, we can claim that $24 = L + Le$. For the general case, let $H$ denote the total time endowment in the model. We then can write more generally:
+	\[T = Le + L\]
+	
+	Now that we have this in mind, let's proceed to our standard optimization analysis. Like in all optimization problems, we have some sort of objective function we are trying to maximize. Let's think about what choice variables we want to represent in a utility function. Does we, as consumers, consume labor?  No, not really. This would imply that you purchase labor. Instead, we can think of "consuming" leisure. Okay, so now that we have our two goods to consumer, leisure and composite good $x$, we know that our utility function will look like:
+	\[u(Le, x)\]
+	
+	Finally, let's think about the hardest part of this problem: the constraint. What are we constraining our objective function to? Let's set up the left-hand side first. What are we consuming here? We are consuming some composite good $x$ and leisure. But what are the prices of these goods? At least for $x$, things are a bit simpler: the cost of good $x$ will just be $p_x$. The cost of leisure is a tad more complicated! Think of the price of leisure as your forgone wages. We say that if you choose to not work for an hour, this essentially costs you one hour of wages due to opportunity cost. So, the price is just wage, $w$. 
+	
+	Let's also look at one's income. We can say that their max income is $w$ $\times$ $H$. This is their max income if they work every single hour. We also can say that they have non-labor income (think of an allowance or a trust fund). With this being said, let's set up the budget constraint:
+	\[p_x x + wLe = I_0 + wH\]
+		
+	Let's just set things straight now that we have everything. We recall that for consumer optimization problems, we set up the following questions:
+	
+	\begin{enumerate}
+		\item \textbf{Objective Function}: What are we maximizing/minimizing?
+		\item \textbf{Constraint}: What do we constrain our objective function to? 
+		\item \textbf{Choice variables}: What variables do we choose to achieve maximization/minimization? 
+		\item \textbf{Exogenous variables}: What variables affect the situation but are taken as given? 
+	\end{enumerate}
+	
+	By now you should be able to answer all of these questions. But I will do it just in case you had trouble following the notes.  
+	
+	\begin{enumerate}
+		\item \textbf{Objective Function}: We maximize consumer utility
+		\item \textbf{Constraint}: We constrain utility to our new budget constraint relating income to leisure.
+		\item \textbf{Choice variables}: We maximize utility via consuming $x$ and $Le$, so we maximize the quantity of each good. 
+		\item \textbf{Exogenous variables}: We take prices, wage, and  non-labor income as given. 
+	\end{enumerate}
+	
+	Let's write the problem as follows:
+	\[max \hspace{.2cm} u(Le, x) \]
+	\[ \textnormal{s.t.}  p_x x + wLe = I_0 + wH \]
+	
+\section{Graphical Solution} 
+
+%\input{/Users/jackrosetti/Downloads/us.sitesucker.mac.sitesucker/jackrosetti.github.io/teaching/Intermediate Micro/MPbullseye.tex}
+
+%Kids, turn away. We are getting graphic. 
+	
+\end{document}
