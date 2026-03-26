@@ -10,21 +10,16 @@
 
 <head>
 
-  
-  
-
-  
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Teaching">
-  <meta property="og:description" content="Economics Student UCSD">
+  <meta property="og:description" content="Insight Economics Analyst">
 
   <title>Teaching</title>
-  <meta name="description" content="Economics Student UCSD">
+  <meta name="description" content="Insight Economics Analyst">
 
   <link rel="shortcut icon" type="image/x-icon" href="../assets/jr.png">
 
@@ -43,6 +38,58 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../assets/css/style.css">
 
+  <style>
+    .teaching-card {
+      border-radius: 12px;
+      text-decoration: none !important;
+      transition: transform 300ms, box-shadow 300ms;
+      display: block;
+      height: 100%;
+    }
+    .teaching-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      text-decoration: none !important;
+    }
+    .teaching-card .card-body {
+      padding: 1.4rem 1.5rem 0.5rem;
+    }
+    .teaching-card .card-footer {
+      font-size: 0.82rem;
+      background: transparent;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      padding: 0.6rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .teaching-card .course-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .teaching-card .course-desc {
+      font-size: 0.875rem;
+      color: #6c757d;
+      margin-bottom: 0.75rem;
+    }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6c757d;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 6px;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+    .role-badge {
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+  </style>
+
 </head>
 
 <body class="h-100 d-flex flex-column">
@@ -57,220 +104,130 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav ml-auto"><a class="nav-item nav-link " href="../files/Rosetti_Resume.pdf">CV</a>
-
-      <a class="nav-item nav-link " href="../research/index.html">Research</a>
-
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link" href="../files/Rosetti_Resume.pdf">CV</a>
+      <a class="nav-item nav-link" href="../research/index.html">Research</a>
       <a class="nav-item nav-link active" href="index.html">Teaching</a>
-
-      <a class="nav-item nav-link " href="../about/index.html">About</a>
-
-      
-
+      <a class="nav-item nav-link" href="../about/index.html">About</a>
       <span id="theme-toggler" class="nav-item nav-link" role="button" onclick="toggleTheme()"></span>
     </div>
   </div>
 
 </nav>
-    <div class="card-group mt-2">
-  
-    <!-- <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
-  <a href="labor/index.html" class="post card border border-">
-    <div class="card-body text-themed">
-      <h3 class="card-title">Labor Economics</h3>
-      <p class="card-text">
-        
-        <span class="badge badge-dark">Instructor</span>
-        
-        <span class="badge badge-dark">Undergraduate</span>
-        
-      </p>
-      <p class="card-text"></p>
-    </div>
-    <div class="card-footer text-themed">
-      Summer 2019
-    </div>
-  </a>
-</div> -->
-  
-    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
-  <a href="int-micro/index.html" class="post card border border-">
-    <div class="card-body text-themed">
-      <h3 class="card-title">Intermediate Microeconomics - Consumer Theory</h3>
-      <p class="card-text">
-        
-        <span class="badge badge-dark">Supplemental Instruction Leader</span>
-        
-        <span class="badge badge-dark">Undergraduate</span>
-        
-      </p>
-      <p class="card-text"></p>
-    </div>
-    <div class="card-footer text-themed">
-      Fall 2021, Winter 2022
-    </div>
-  </a>
-</div>
 
-    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
-  <a href="int-econometrics/index.html" class="post card border border-">
-    <div class="card-body text-themed">
-      <h3 class="card-title">Econometrics A</h3>
-      <p class="card-text">
-        
-        <span class="badge badge-dark">Undergraduate Instructional Apprentice</span>
-        
-        <span class="badge badge-dark">Undergraduate</span>
-        
-      </p>
-      <p class="card-text"></p>
-    </div>
-    <div class="card-footer text-themed">
-      Winter 2022
-    </div>
-  </a>
-</div>
+    <div class="col-lg-10 mx-auto mt-5">
 
-    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
-  <a href="applied-econometrics/index.html" class="post card border border-">
-    <div class="card-body text-themed">
-      <h3 class="card-title">Applied Econometrics</h3>
-      <p class="card-text">
-        
-        <span class="badge badge-dark">Undergraduate Instructional Apprentice</span>
-        
-        <span class="badge badge-dark">Undergraduate</span>
-        
+      <p class="text-muted mb-4" style="font-size: 0.95rem;">
+        Notes and practice problems I have created for courses I help instruct. If you find a typo or thinko, please let me know. Feel free to use these materials in any way.
       </p>
-      <p class="card-text"></p>
-    </div>
-    <div class="card-footer text-themed">
-      Compiled Notes
-    </div>
-  </a>
-</div>
 
-    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
-  <a href="time-series/index.html" class="post card border border-">
-    <div class="card-body text-themed">
-      <h3 class="card-title">Time Series</h3>
-      <p class="card-text">
-        
-        <span class="badge badge-dark">Undergraduate Instructional Apprentice</span>
-        
-        <span class="badge badge-dark">Undergraduate</span>
-        
-      </p>
-      <p class="card-text"></p>
-    </div>
-    <div class="card-footer text-themed">
-      Compiled Notes
-    </div>
-  </a>
-</div>
+      <!-- Instruction -->
+      <p class="section-label wow animated fadeIn" data-wow-delay=".05s">Instruction</p>
 
-    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
-  <a href="real-analysis/index.html" class="post card border border-">
-    <div class="card-body text-themed">
-      <h3 class="card-title">Real Analysis</h3>
-      <p class="card-text">
-        
-        <span class="badge badge-dark">Supplemental Notes</span>
-        
-        <span class="badge badge-dark">Undergraduate</span>
-        
-      </p>
-      <p class="card-text"></p>
-    </div>
-    <div class="card-footer text-themed">
-      Compiled Notes
-    </div>
-  </a>
-</div>
-  
-    <!-- <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
-  <a href="adv-micro/index.html" class="post card border border-">
-    <div class="card-body text-themed">
-      <h3 class="card-title">Advanced Microeconomics</h3>
-      <p class="card-text">
-        
-        <span class="badge badge-dark">Teaching Assistant</span>
-        
-        <span class="badge badge-dark">Undergraduate</span>
-        
-      </p>
-      <p class="card-text"></p>
-    </div>
-    <div class="card-footer text-themed">
-      Spring 2019
-    </div>
-  </a>
-</div> -->
-  
-    <!-- <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
-  <a href="phd-micro/index.html" class="post card border border-">
-    <div class="card-body text-themed">
-      <h3 class="card-title">PhD Microeconomics</h3>
-      <p class="card-text">
-        
-        <span class="badge badge-dark">Teaching Assistant</span>
-        
-        <span class="badge badge-dark">Graduate</span>
-        
-      </p>
-      <p class="card-text"></p>
-    </div>
-    <div class="card-footer text-themed">
-      Fall 2017
-    </div>
-  </a>
-</div> -->
-   
-<!-- <div class="col-lg-10 mx-auto mt-5 markdown-body wow animated fadeIn" data-wow-delay=".3s">
-<a class="m-1 btn btn-light btn-4 btn-block" href="evaluations/Evaluations.pdf">
-  Teaching Evaluations
-</a>
-</div>
- --></div>
+      <div class="row wow animated fadeIn" data-wow-delay=".1s">
 
-<div class="col-lg-10 mx-auto mt-5 markdown-body wow animated fadeIn" data-wow-delay=".3s">
-<p> This page contains notes and practice problems I have created for classes I help instruct. It is a way for me to help students interact deeply with the course material. I try my best to not make typos or thinkos, but if you happen to find one, kindly let me know! Please feel free to use these in any way.
-<br>
-<br>
-	
-</div>
+        <div class="col-md-6 mb-4">
+          <a href="int-micro/index.html" class="teaching-card card text-themed border">
+            <div class="card-body">
+              <p class="course-title">Intermediate Microeconomics</p>
+              <p class="course-desc">Consumer theory, utility maximization, demand, and welfare analysis. Session notes and practice problem sets for undergraduates.</p>
+              <span class="badge badge-secondary role-badge">Supplemental Instruction Leader</span>
+            </div>
+            <div class="card-footer text-themed">
+              <span>UCSD</span>
+              <span>Fall 2021, Winter 2022</span>
+            </div>
+          </a>
+        </div>
 
+        <div class="col-md-6 mb-4">
+          <a href="int-econometrics/index.html" class="teaching-card card text-themed border">
+            <div class="card-body">
+              <p class="course-title">Econometrics A</p>
+              <p class="course-desc">Introduction to OLS regression, hypothesis testing, and inference. Notes and problem sets covering core undergraduate econometrics.</p>
+              <span class="badge badge-secondary role-badge">Instructional Apprentice</span>
+            </div>
+            <div class="card-footer text-themed">
+              <span>UCSD</span>
+              <span>Winter 2022</span>
+            </div>
+          </a>
+        </div>
 
+      </div>
+
+      <!-- Notes & Materials -->
+      <p class="section-label mt-3 wow animated fadeIn" data-wow-delay=".15s">Notes &amp; Materials</p>
+
+      <div class="row wow animated fadeIn" data-wow-delay=".2s">
+
+        <div class="col-md-6 mb-4">
+          <a href="applied-econometrics/index.html" class="teaching-card card text-themed border">
+            <div class="card-body">
+              <p class="course-title">Applied Econometrics</p>
+              <p class="course-desc">Compiled notes covering DiD, IV, RD, and other applied causal inference methods used in empirical economics.</p>
+              <span class="badge badge-secondary role-badge">Instructional Apprentice</span>
+            </div>
+            <div class="card-footer text-themed">
+              <span>UCSD</span>
+              <span>Compiled Notes</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <a href="time-series/index.html" class="teaching-card card text-themed border">
+            <div class="card-body">
+              <p class="course-title">Time Series</p>
+              <p class="course-desc">Notes on ARMA models, stationarity, cointegration, and forecasting techniques for undergraduate econometrics.</p>
+              <span class="badge badge-secondary role-badge">Instructional Apprentice</span>
+            </div>
+            <div class="card-footer text-themed">
+              <span>UCSD</span>
+              <span>Compiled Notes</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <a href="real-analysis/index.html" class="teaching-card card text-themed border">
+            <div class="card-body">
+              <p class="course-title">Real Analysis</p>
+              <p class="course-desc">Supplemental notes on limits, continuity, compactness, and metric spaces for students transitioning into graduate-level mathematics.</p>
+              <span class="badge badge-secondary role-badge">Supplemental Notes</span>
+            </div>
+            <div class="card-footer text-themed">
+              <span>UCSD</span>
+              <span>Compiled Notes</span>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
 
   </main>
 
   <footer class="mt-auto py-3 text-center">
 
-
-
-  <div class="container-fluid justify-content-center"><a class="social mx-1"  href="mailto:jrosetti@ucsd.edu"
+  <div class="container-fluid justify-content-center">
+    <a class="social mx-1" href="mailto:jackrosetti@gmail.com"
        style="color: #6c757d"
        onMouseOver="this.style.color='#db4437'"
        onMouseOut="this.style.color='#6c757d'">
-      <i class="fas fa-envelope fa-2x"></i> <!-- change for size: fa-sm, fa-lg, fa-2x, fa-3x-->
-    </a><a class="social mx-1"  href="https://www.github.com/jackrosetti"
+      <i class="fas fa-envelope fa-2x"></i>
+    </a>
+    <a class="social mx-1" href="https://www.github.com/jackrosetti"
        style="color: #6c757d"
        onMouseOver="this.style.color='#333333'"
        onMouseOut="this.style.color='#6c757d'">
-      <i class="fab fa-github fa-2x"></i> <!-- change for size: fa-sm, fa-lg, fa-2x, fa-3x-->
+      <i class="fab fa-github fa-2x"></i>
     </a>
-    <!-- <a class="social mx-1"  href="https://www.linkedin.com/in/motazac"
-       style="color: #6c757d"
-       onMouseOver="this.style.color='#007bb5'"
-       onMouseOut="this.style.color='#6c757d'">
-      <i class="fab fa-linkedin-in fa-2x"></i> change for size: fa-sm, fa-lg, fa-2x, fa-3x
-    </a> -->
+  </div>
 
-</div>
-  
 </footer>
 
-  
   <!-- GitHub Buttons -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
@@ -293,7 +250,6 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })
 </script>
-
 
 </body>
 

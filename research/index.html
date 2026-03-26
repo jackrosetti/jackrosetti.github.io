@@ -10,21 +10,16 @@
 
 <head>
 
-  
-  
-
-  
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Research">
-  <meta property="og:description" content="UCSD Economics Student">
+  <meta property="og:description" content="Insight Economics Analyst">
 
   <title>Research</title>
-  <meta name="description" content="UCSD Economics Student">
+  <meta name="description" content="Insight Economics Analyst">
 
   <link rel="shortcut icon" type="image/x-icon" href="../assets/jr.png">
 
@@ -43,6 +38,39 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../assets/css/style.css">
 
+  <style>
+    .paper-title a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .paper-title a:hover {
+      color: #007bff;
+    }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6c757d;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 6px;
+      margin-bottom: 2rem;
+      display: inline-block;
+    }
+    .paper-entry {
+      margin-bottom: 2.5rem;
+    }
+    .paper-entry .paper-meta {
+      font-size: 0.88rem;
+      color: #6c757d;
+      margin-bottom: 0.5rem;
+    }
+    .paper-entry p {
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+  </style>
+
 </head>
 
 <body class="h-100 d-flex flex-column">
@@ -57,130 +85,116 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav ml-auto"><a class="nav-item nav-link " href="../files/Rosetti_Resume.pdf">CV</a>
-
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link" href="../files/Rosetti_Resume.pdf">CV</a>
       <a class="nav-item nav-link active" href="index.html">Research</a>
-
-      <a class="nav-item nav-link " href="../teaching/index.html">Teaching</a>
-
-      <a class="nav-item nav-link " href="../about/index.html">About</a>
-
-      
-
+      <a class="nav-item nav-link" href="../teaching/index.html">Teaching</a>
+      <a class="nav-item nav-link" href="../about/index.html">About</a>
       <span id="theme-toggler" class="nav-item nav-link" role="button" onclick="toggleTheme()"></span>
     </div>
   </div>
 
 </nav>
-    
-<div class="card-columns m-3 mt-5">
 
-  <!-- Remote Projects -->
+    <div class="col-lg-8 mx-auto mt-5 markdown-body">
 
-  <!-- Local Projects -->
-<div class="wow animated fadeIn" data-wow-delay=".15s">
-  <a href="../files/Rosetti_FinalDraft.pdf"class="project card text-themed"><div class="card-body">
-      <h5 id="residential-segregation-and-the-demand-for-schooling-name" class="card-title">Labor Market Conditions and Military Enlistment
-      </h5><p id="residential-segregation-and-the-demand-for-schooling-subt" class="card-text" style="font-size:105%;"><em>Senior Thesis</em></p><p id="residential-segregation-and-the-demand-for-schooling-desc" class="card-text">This paper addresses the question of how local labor markets affect military enlistment across each state. Hitherto studies have focused on the relationship between national unemployment and military enlistment, disregarding geographical heterogeneity which may cause one part of the country to react stronger than others. I develop a new way of thinking about who enlists and why using a cohort-based identification strategy.</p>
-      <p id="residential-segregation-and-the-demand-for-schooling-topics" class="card-text"><span class="badge badge-pill text-primary border border-primary ml-1">Military</span><span class="badge badge-pill text-primary border border-primary ml-1">Fixed Effects</span><span class="badge badge-pill text-primary border border-primary ml-1">Unemployment</span><span class="badge badge-pill text-primary border border-primary ml-1">Labor Market</span><span class="badge badge-pill text-primary border border-primary ml-1"></span></p>	  
-      <p id="residential-segregation-and-the-demand-for-schooling-tools" class="card-text"><span class="badge badge-pill text-danger border border-danger ml-1">Stata</span><span class="badge badge-pill text-danger border border-danger ml-1">R</span><span class="badge badge-pill text-danger border border-danger ml-1"></span><span class="badge badge-pill text-danger border border-danger ml-1"></span><span class="badge badge-pill text-danger border border-danger ml-1"></span></p>
+      <!-- Working Papers -->
+      <div class="mb-5 wow animated fadeIn" data-wow-delay=".1s">
+        <p class="section-label">Working Papers</p>
+
+        <div class="paper-entry">
+          <h5 class="paper-title mb-1">
+            <a href="../files/Rosetti_FinalDraft.pdf">Labor Market Conditions and Military Enlistment</a>
+          </h5>
+          <p class="paper-meta"><em>Senior Thesis &mdash; UCSD Department of Economics</em></p>
+          <p>This paper addresses how local labor markets affect military enlistment across states. Prior studies focused on national unemployment and enlistment, disregarding geographical heterogeneity. I develop a cohort-based identification strategy to examine how regional labor market shocks drive enlistment decisions.</p>
+          <div class="mb-2">
+            <span class="badge badge-pill text-primary border border-primary mr-1">Labor Markets</span>
+            <span class="badge badge-pill text-primary border border-primary mr-1">Military</span>
+            <span class="badge badge-pill text-primary border border-primary mr-1">Fixed Effects</span>
+            <span class="badge badge-pill text-danger border border-danger mr-1">Stata</span>
+            <span class="badge badge-pill text-danger border border-danger mr-1">R</span>
+          </div>
+          <a href="../files/Rosetti_FinalDraft.pdf" class="btn btn-sm btn-outline-primary mt-1">
+            <i class="fas fa-file-pdf mr-1"></i> PDF
+          </a>
+        </div>
+
+        <div class="paper-entry">
+          <h5 class="paper-title mb-1">
+            <a href="../files/finaldraft.pdf">Estimating the Black-White Parity in Returns to Education</a>
+          </h5>
+          <p class="paper-meta"><em>Honors Paper &mdash; UCSD Department of Economics</em></p>
+          <p>This paper measures the Black-White disparity in returns to education using an extended Mincer equation. Workers are grouped by commuting zone to capture both metropolitan and agricultural local economies. Nonparametric estimation techniques uncover demographic differences in returns to education.</p>
+          <div class="mb-2">
+            <span class="badge badge-pill text-primary border border-primary mr-1">Education</span>
+            <span class="badge badge-pill text-primary border border-primary mr-1">Mincer Human Capital</span>
+            <span class="badge badge-pill text-primary border border-primary mr-1">Nonparametric</span>
+            <span class="badge badge-pill text-primary border border-primary mr-1">Labor Markets</span>
+            <span class="badge badge-pill text-danger border border-danger mr-1">Stata</span>
+            <span class="badge badge-pill text-danger border border-danger mr-1">R</span>
+          </div>
+          <a href="../files/finaldraft.pdf" class="btn btn-sm btn-outline-primary mt-1">
+            <i class="fas fa-file-pdf mr-1"></i> PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Work in Progress -->
+      <div class="wow animated fadeIn" data-wow-delay=".2s">
+        <p class="section-label">Work in Progress</p>
+
+        <div class="paper-entry">
+          <h5 class="paper-title mb-1">Fuzzy Regression Discontinuity with a Continuous Treatment Effect</h5>
+          <p class="paper-meta"><em>With Haitian Xie</em></p>
+          <p>Standard fuzzy RD designs use a binary treatment to identify causal effects. This project extends the framework to continuous treatment variables and applies it to analyze how distance from time zone borders affects time use behavior.</p>
+          <div class="mb-2">
+            <span class="badge badge-pill text-primary border border-primary mr-1">Regression Discontinuity</span>
+            <span class="badge badge-pill text-primary border border-primary mr-1">Semiparametric</span>
+            <span class="badge badge-pill text-primary border border-primary mr-1">Time Use</span>
+            <span class="badge badge-pill text-primary border border-primary mr-1">Spatial</span>
+            <span class="badge badge-pill text-danger border border-danger mr-1">Stata</span>
+            <span class="badge badge-pill text-danger border border-danger mr-1">R</span>
+            <span class="badge badge-pill text-danger border border-danger mr-1">ArcGIS</span>
+          </div>
+        </div>
+
+        <div class="paper-entry">
+          <h5 class="paper-title mb-1">Income Tax Analysis Using County-Level Data</h5>
+          <p class="paper-meta"><em>With Dr. Christy Caridi</em></p>
+          <p>This project studies wealth disparities using IRS county-level income tax data. Results show richer counties pay substantially more in capital gains taxes and experienced faster income growth relative to lower-income counties.</p>
+          <div class="mb-2">
+            <span class="badge badge-pill text-primary border border-primary mr-1">Taxes</span>
+            <span class="badge badge-pill text-primary border border-primary mr-1">Income Inequality</span>
+            <span class="badge badge-pill text-primary border border-primary mr-1">IRS</span>
+            <span class="badge badge-pill text-danger border border-danger mr-1">Python</span>
+          </div>
+        </div>
+      </div>
+
     </div>
-     </a> 
-</div>
-
-
-<div class="wow animated fadeIn" data-wow-delay=".15s">
-  <a href="../files/finaldraft.pdf"class="project card text-themed"><div class="card-body">
-      <h5 id="mincer-black-white" class="card-title">Estimating the Black-White Parity in Returns to Education
-      </h5><p id="mincer-black-white-subt" class="card-text" style="font-size:105%;"><em>Honors Paper</em></p><p id="mincer-black-white-desc" class="card-text">This is a very short paper that tries to measure the Black-White parity in returns to education. This paper seeks to find precise estimates for different returns to education using an extended Mincer equation. I group workers by their commuting zones, which is the best way to measure local economies to include both metropolitan and agricultural centers. This short empirical project uses nonparametric estimation techniques to uncover the difference in returns to education by demographics. </p>
-      <p id="residential-segregation-and-the-demand-for-schooling-topics" class="card-text"><span class="badge badge-pill text-primary border border-primary ml-1">Mincer Human Capital</span><span class="badge badge-pill text-primary border border-primary ml-1">Education</span><span class="badge badge-pill text-primary border border-primary ml-1">Nonparametric</span><span class="badge badge-pill text-primary border border-primary ml-1">Labor Market</span><span class="badge badge-pill text-primary border border-primary ml-1"></span></p>   
-      <p id="residential-segregation-and-the-demand-for-schooling-tools" class="card-text"><span class="badge badge-pill text-danger border border-danger ml-1">Stata</span><span class="badge badge-pill text-danger border border-danger ml-1">R</span><span class="badge badge-pill text-danger border border-danger ml-1"></span><span class="badge badge-pill text-danger border border-danger ml-1"></span><span class="badge badge-pill text-danger border border-danger ml-1"></span></p>
-    </div>
-     </a> 
-</div>
-
-
-
-  <div class="wow animated fadeIn" data-wow-delay=".15s">
-   <!-- <a href=""class="project card text-themed"> -->
-    <!-- <img id="what-drives-the-efficiency-in-ridesharing-markets-img" class="card-img-top" src="../assets/img/rideaustin.png" alt="What Drives the Efficiency in Ridesharing Markets?" />
- -->    
-
-
-
-<div class="wow animated fadeIn" data-wow-delay=".15s">
-  <a href="javascript:void(0);"class="project card text-themed"><div class="card-body">
-     <h5 id="what-drives-the-efficiency-in-ridesharing-markets-name" class="card-title"> Using a Fuzzy Regression Discontinuity a Continuous Treatment Effect </h5><p id="residential-segregation-and-the-demand-for-schooling-subt" class="card-text" style="font-size:105%;"><em>With Haitian Xie</em></p><p id="what-drives-the-efficiency-in-ridesharing-markets-desc" class="card-text">I worked as a research assistant for Haitian Xie, who devised a new way to identify causality using regression discontinuity (RD). Standard fuzzy RDs use a binary treatment to measure the treatment effect, however Xie devised a novel model for continuous treatment variables. We apply this model to analyze how one's distance from each time zone border affects time use.</p>
-      <p id="what-drives-the-efficiency-in-ridesharing-markets-topics" class="card-text"><span class="badge badge-pill text-primary border border-primary ml-1">Discontinuity</span><span class="badge badge-pill text-primary border border-primary ml-1">Semiparametric</span><span class="badge badge-pill text-primary border border-primary ml-1">Time Use</span><span class="badge badge-pill text-primary border border-primary ml-1">Spatial</span></p>	  
-      <p id="what-drives-the-efficiency-in-ridesharing-markets-tools" class="card-text"><span class="badge badge-pill text-danger border border-danger ml-1">Stata</span><span class="badge badge-pill text-danger border border-danger ml-1">R</span><span class="badge badge-pill text-danger border border-danger ml-1">ArcGIS</span></p>
-    </div>
-     </a> 
-</div>
-
-
-  <div class="wow animated fadeIn" data-wow-delay=".15s">
-   <a href="javascript:void(0);"class="project card text-themed"><div class="card-body">
-      <h5 id="lunches-for-loyalty-the-effect-of-direct-to-physician-advertising-in-new-drug-markets-name" class="card-title">Income Tax Analysis Using County Level Data
-      </h5><p id="residential-segregation-and-the-demand-for-schooling-subt" class="card-text" style="font-size:105%;"><em>With Dr. Christy Caridi</em></p><p id="lunches-for-loyalty-the-effect-of-direct-to-physician-advertising-in-new-drug-markets-desc" class="card-text">I study wealth disparities based on income tax data from the IRS. We find results consistent with previous years' analyses. Richer counties tend to pay much more in capital gains taxes, for example. We also find that richer counties had a larger difference in taxes paid from the previous year, indicating that the average incomes in those counties grew faster than incomes in poorer counties.  </p>
-      <p id="lunches-for-loyalty-the-effect-of-direct-to-physician-advertising-in-new-drug-markets-topics" class="card-text"><span class="badge badge-pill text-primary border border-primary ml-1">Taxes</span><span class="badge badge-pill text-primary border border-primary ml-1">Income inequality</span><span class="badge badge-pill text-primary border border-primary ml-1">IRS</span></p>	  
-      <p id="lunches-for-loyalty-the-effect-of-direct-to-physician-advertising-in-new-drug-markets-tools" class="card-text"><span class="badge badge-pill text-danger border border-danger ml-1">Python</span><span class="badge badge-pill text-danger border border-danger ml-1">Excel</span></p>
-    </div>
-     </a> 
-</div>
-
-<!-- 
-  <div class="wow animated fadeIn" data-wow-delay=".15s">
-   <a href="../files/Welfare_Al-Chanati_Husted.pdf"class="project card text-themed"><img id="cutoff-from-support-the-effects-of-losing-cash-welfare-img" class="card-img-top" src="../assets/img/michigan.png" alt="Cutoff from Support: The Effects of Losing Cash Welfare" /><div class="card-body">
-      <h5 id="cutoff-from-support-the-effects-of-losing-cash-welfare-name" class="card-title">Cutoff from Support: The Effects of Losing Cash Welfare
-      </h5><p id="cutoff-from-support-the-effects-of-losing-cash-welfare-subt" class="card-text" style="font-size:105%;"><em>with Lucas Husted</em></p><p id="cutoff-from-support-the-effects-of-losing-cash-welfare-desc" class="card-text">We evaluate a policy reform in Michigan, which unexpectedly removed over 16,000 families from TANF. Using a difference-in-difference framework, we find families affected increase their employment, but become poorer as they are unable to offset the loss of welfare benefits.</p>
-      <p id="cutoff-from-support-the-effects-of-losing-cash-welfare-topics" class="card-text"><span class="badge badge-pill text-primary border border-primary ml-1">Labor</span><span class="badge badge-pill text-primary border border-primary ml-1">Policy Analysis</span><span class="badge badge-pill text-primary border border-primary ml-1">Poverty</span></p>	  
-      <p id="cutoff-from-support-the-effects-of-losing-cash-welfare-tools" class="card-text"><span class="badge badge-pill text-danger border border-danger ml-1">Python</span></p>
-    </div>
-     </a> 
-</div>
-
-  <div class="wow animated fadeIn" data-wow-delay=".15s">
-   <a href="javascript:void(0);"class="project card text-themed"><div class="card-body">
-      <h5 id="the-efficiency-effects-of-drug-acquisitions-from-access-to-sales-representatives-name" class="card-title">The Efficiency Effects of Drug Acquisitions from Access to Sales Representatives
-      </h5><p id="the-efficiency-effects-of-drug-acquisitions-from-access-to-sales-representatives-subt" class="card-text" style="font-size:105%;"><em>with Kritika Goel</em></p><p id="the-efficiency-effects-of-drug-acquisitions-from-access-to-sales-representatives-desc" class="card-text">We document novel evidence on an important source of efficiency from drug acquisitions: access to the marketing networks of an acquiring firm. We focus on 13 drug acquisitions by 11 firms in 2015-2016. Using transaction-level data on physician detailing, we document patterns in the data consistent with the presence of efficiencies in network size.</p>
-      <p id="the-efficiency-effects-of-drug-acquisitions-from-access-to-sales-representatives-topics" class="card-text"><span class="badge badge-pill text-primary border border-primary ml-1">Advertising</span><span class="badge badge-pill text-primary border border-primary ml-1">Acquisitions</span><span class="badge badge-pill text-primary border border-primary ml-1">Healthcare</span></p>	  
-      <p id="the-efficiency-effects-of-drug-acquisitions-from-access-to-sales-representatives-tools" class="card-text"><span class="badge badge-pill text-danger border border-danger ml-1">Python</span></p>
-    </div>
-     </a> 
-</div>
- -->
-  
-
-</div>
 
   </main>
 
   <footer class="mt-auto py-3 text-center">
 
-
-
-  <div class="container-fluid justify-content-center"><a class="social mx-1"  href="mailto:jrosetti@ucsd.edu"
+  <div class="container-fluid justify-content-center">
+    <a class="social mx-1" href="mailto:jackrosetti@gmail.com"
        style="color: #6c757d"
        onMouseOver="this.style.color='#db4437'"
        onMouseOut="this.style.color='#6c757d'">
-      <i class="fas fa-envelope fa-2x"></i> <!-- change for size: fa-sm, fa-lg, fa-2x, fa-3x-->
-    </a><a class="social mx-1"  href="https://www.github.com/jackrosetti"
+      <i class="fas fa-envelope fa-2x"></i>
+    </a>
+    <a class="social mx-1" href="https://www.github.com/jackrosetti"
        style="color: #6c757d"
        onMouseOver="this.style.color='#333333'"
        onMouseOut="this.style.color='#6c757d'">
-      <i class="fab fa-github fa-2x"></i> <!-- change for size: fa-sm, fa-lg, fa-2x, fa-3x-->
+      <i class="fab fa-github fa-2x"></i>
     </a>
-    <!-- <a class="social mx-1"  href="https://www.linkedin.com/in/motazac"
-       style="color: #6c757d"
-       onMouseOver="this.style.color='#007bb5'"
-       onMouseOut="this.style.color='#6c757d'">
-      <i class="fab fa-linkedin-in fa-2x"></i>  change for size: fa-sm, fa-lg, fa-2x, fa-3x    </a> -->
+  </div>
 
-</div>
-  
 </footer>
 
-  
   <!-- GitHub Buttons -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
@@ -203,7 +217,6 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })
 </script>
-
 
 </body>
 
