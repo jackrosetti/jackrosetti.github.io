@@ -1,5 +1,23 @@
 (() => {
   const SECRET = "tron";
+  const PALETTE_SECRET = "jack";
+  const MATH_SECRET = "math";
+  const RETRO_STORAGE_KEY = "retroAcademicMode";
+  const KONAMI_CODE = [
+    "arrowup",
+    "arrowup",
+    "arrowdown",
+    "arrowdown",
+    "arrowleft",
+    "arrowright",
+    "arrowleft",
+    "arrowright",
+    "b",
+    "a",
+  ];
+  const SECRET_LENGTH = Math.max(SECRET.length, PALETTE_SECRET.length, MATH_SECRET.length);
+  const scriptUrl = document.currentScript ? document.currentScript.src : window.location.href;
+  const siteRoot = new URL("../..", scriptUrl);
   const STEP_MS = 72;
   const BOOST_STEP_MS = 44;
   const BOOST_DURATION_MS = 950;
@@ -61,6 +79,13 @@
   ];
 
   let overlay;
+  let commandPalette;
+  let commandInput;
+  let commandList;
+  let commandEmpty;
+  let commandPreviousFocus;
+  let filteredCommands = [];
+  let activeCommandIndex = 0;
   let canvas;
   let ctx;
   let scoreEl;
@@ -77,7 +102,10 @@
   let boostUntil = 0;
   let boostReadyAt = 0;
   let resetTimer;
+  let noticeTimer;
   let typed = "";
+  let konamiIndex = 0;
+  let paletteActive = false;
   let cols = 0;
   let rows = 0;
   let cell = 12;
@@ -93,6 +121,7 @@
 
   function initLightcycle() {
     document.addEventListener("keydown", handleKeydown);
+    initRetroAcademicMode();
 
     if (window.location.hash.toLowerCase() === "#tron") {
       window.setTimeout(openGame, 250);
@@ -105,14 +134,37 @@
       return;
     }
 
+    if (paletteActive) {
+      handleCommandPaletteKeydown(event);
+      return;
+    }
+
+    if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+      event.preventDefault();
+      openCommandPalette();
+      return;
+    }
+
+    if (!event.metaKey && !event.ctrlKey && !event.altKey && !isTypingField(event.target) && trackKonami(event.key.toLowerCase())) {
+      event.preventDefault();
+      toggleRetroAcademicMode(true);
+      return;
+    }
+
     if (event.metaKey || event.ctrlKey || event.altKey || event.key.length !== 1 || isTypingField(event.target)) {
       return;
     }
 
-    typed = `${typed}${event.key.toLowerCase()}`.slice(-SECRET.length);
+    typed = `${typed}${event.key.toLowerCase()}`.slice(-SECRET_LENGTH);
     if (typed === SECRET) {
       event.preventDefault();
       openGame();
+    } else if (typed === PALETTE_SECRET) {
+      event.preventDefault();
+      openCommandPalette();
+    } else if (typed === MATH_SECRET) {
+      event.preventDefault();
+      window.location.href = pageUrl("math/index.html");
     }
   }
 
@@ -123,6 +175,341 @@
 
     const tagName = target.tagName ? target.tagName.toLowerCase() : "";
     return tagName === "input" || tagName === "textarea" || tagName === "select" || target.isContentEditable;
+  }
+
+  function trackKonami(key) {
+    if (key === KONAMI_CODE[konamiIndex]) {
+      konamiIndex += 1;
+
+      if (konamiIndex === KONAMI_CODE.length) {
+        konamiIndex = 0;
+        return true;
+      }
+
+      return false;
+    }
+
+    konamiIndex = key === KONAMI_CODE[0] ? 1 : 0;
+    return false;
+  }
+
+  function initRetroAcademicMode() {
+    if (getStoredRetroAcademicMode()) {
+      setRetroAcademicMode(true, false);
+    }
+  }
+
+  function getStoredRetroAcademicMode() {
+    try {
+      return window.localStorage.getItem(RETRO_STORAGE_KEY) === "true";
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function persistRetroAcademicMode(enabled) {
+    try {
+      window.localStorage.setItem(RETRO_STORAGE_KEY, enabled ? "true" : "false");
+    } catch (error) {
+      // The visual mode still works for the current page when storage is unavailable.
+    }
+  }
+
+  function toggleRetroAcademicMode(announce) {
+    setRetroAcademicMode(!document.body.classList.contains("retro-academic-active"), announce);
+  }
+
+  function setRetroAcademicMode(enabled, announce) {
+    document.body.classList.toggle("retro-academic-active", enabled);
+    persistRetroAcademicMode(enabled);
+
+    if (announce) {
+      showAcademicNotice(enabled ? "RETRO ACADEMIC MODE // MODEL CONVERGED" : "RETRO ACADEMIC MODE // ESTIMATOR RESET");
+    }
+  }
+
+  function showAcademicNotice(message) {
+    let notice = document.querySelector("[data-academic-toast]");
+
+    if (!notice) {
+      notice = document.createElement("div");
+      notice.className = "academic-toast";
+      notice.setAttribute("data-academic-toast", "");
+      notice.setAttribute("role", "status");
+      notice.setAttribute("aria-live", "polite");
+      document.body.appendChild(notice);
+    }
+
+    notice.textContent = message;
+    notice.classList.add("is-visible");
+    window.clearTimeout(noticeTimer);
+    noticeTimer = window.setTimeout(() => {
+      notice.classList.remove("is-visible");
+    }, 2100);
+  }
+
+  function pageUrl(path) {
+    return new URL(path, siteRoot).href;
+  }
+
+  function getCommands() {
+    return [
+      {
+        title: "Home",
+        detail: "Return to the front page",
+        hint: "index",
+        aliases: ["jack", "main"],
+        run: () => {
+          window.location.href = pageUrl("index.html");
+        },
+      },
+      {
+        title: "Research",
+        detail: "Open current research and papers",
+        hint: "papers",
+        aliases: ["work", "projects"],
+        run: () => {
+          window.location.href = pageUrl("research/index.html");
+        },
+      },
+      {
+        title: "Teaching",
+        detail: "Open notes and course materials",
+        hint: "notes",
+        aliases: ["courses", "materials"],
+        run: () => {
+          window.location.href = pageUrl("teaching/index.html");
+        },
+      },
+      {
+        title: "Daily Math",
+        detail: "Open the hidden integral and differential equation page",
+        hint: "math",
+        aliases: ["integral", "diff eq", "ode", "problem"],
+        run: () => {
+          window.location.href = pageUrl("math/index.html");
+        },
+      },
+      {
+        title: "About",
+        detail: "Open bio, skills, and timeline",
+        hint: "bio",
+        aliases: ["timeline", "skills"],
+        run: () => {
+          window.location.href = pageUrl("about/index.html");
+        },
+      },
+      {
+        title: "CV",
+        detail: "Open the current PDF",
+        hint: "pdf",
+        aliases: ["resume", "vita"],
+        run: () => {
+          window.location.href = pageUrl("files/Rosetti_Resume.pdf");
+        },
+      },
+      {
+        title: "Email",
+        detail: "Start a message to Jack",
+        hint: "mail",
+        aliases: ["contact"],
+        run: () => {
+          window.location.href = "mailto:jackrosetti@gmail.com";
+        },
+      },
+      {
+        title: "GitHub",
+        detail: "Open jackrosetti on GitHub",
+        hint: "code",
+        aliases: ["repo", "source"],
+        run: () => {
+          window.location.href = "https://www.github.com/jackrosetti";
+        },
+      },
+      {
+        title: "Toggle Theme",
+        detail: "Switch light and dark mode",
+        hint: "theme",
+        aliases: ["dark", "light", "moon", "sun"],
+        run: () => {
+          if (typeof window.toggleTheme === "function") {
+            window.toggleTheme();
+          }
+        },
+      },
+      {
+        title: "Retro Academic Mode",
+        detail: "Toggle the terminal seminar look",
+        hint: "konami",
+        aliases: ["retro", "terminal", "seminar"],
+        run: () => {
+          toggleRetroAcademicMode(true);
+        },
+      },
+      {
+        title: "Light Cycle",
+        detail: "Launch the hidden arcade grid",
+        hint: "tron",
+        aliases: ["game", "arcade"],
+        run: openGame,
+      },
+    ];
+  }
+
+  function createCommandPalette() {
+    if (commandPalette) {
+      return;
+    }
+
+    commandPalette = document.createElement("div");
+    commandPalette.className = "command-palette";
+    commandPalette.setAttribute("role", "dialog");
+    commandPalette.setAttribute("aria-modal", "true");
+    commandPalette.setAttribute("aria-label", "Command palette");
+    commandPalette.innerHTML = `
+      <div class="command-palette__panel">
+        <div class="command-palette__kicker">JR COMMAND LINE</div>
+        <input class="command-palette__input" type="search" placeholder="Search commands" autocomplete="off" spellcheck="false" aria-label="Search commands" />
+        <div class="command-palette__list" role="listbox"></div>
+        <div class="command-palette__empty">NO MATCHING COMMANDS</div>
+      </div>
+    `;
+    document.body.appendChild(commandPalette);
+
+    commandInput = commandPalette.querySelector(".command-palette__input");
+    commandList = commandPalette.querySelector(".command-palette__list");
+    commandEmpty = commandPalette.querySelector(".command-palette__empty");
+
+    commandPalette.addEventListener("click", (event) => {
+      if (event.target === commandPalette) {
+        closeCommandPalette();
+      }
+    });
+
+    commandInput.addEventListener("input", () => {
+      activeCommandIndex = 0;
+      renderCommandList();
+    });
+
+    commandList.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-command-index]");
+
+      if (!button) {
+        return;
+      }
+
+      activeCommandIndex = Number(button.getAttribute("data-command-index"));
+      runActiveCommand();
+    });
+  }
+
+  function openCommandPalette() {
+    createCommandPalette();
+    commandPreviousFocus = document.activeElement;
+    paletteActive = true;
+    typed = "";
+    activeCommandIndex = 0;
+    commandInput.value = "";
+    renderCommandList();
+    commandPalette.classList.add("is-visible");
+    document.body.classList.add("command-palette-active");
+    window.requestAnimationFrame(() => {
+      commandInput.focus({ preventScroll: true });
+    });
+  }
+
+  function closeCommandPalette() {
+    if (!paletteActive) {
+      return;
+    }
+
+    paletteActive = false;
+    commandPalette.classList.remove("is-visible");
+    document.body.classList.remove("command-palette-active");
+
+    if (commandPreviousFocus && typeof commandPreviousFocus.focus === "function") {
+      commandPreviousFocus.focus({ preventScroll: true });
+    }
+  }
+
+  function handleCommandPaletteKeydown(event) {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeCommandPalette();
+      return;
+    }
+
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      moveCommandSelection(1);
+      return;
+    }
+
+    if (event.key === "ArrowUp") {
+      event.preventDefault();
+      moveCommandSelection(-1);
+      return;
+    }
+
+    if (event.key === "Enter") {
+      event.preventDefault();
+      runActiveCommand();
+    }
+  }
+
+  function moveCommandSelection(delta) {
+    if (!filteredCommands.length) {
+      return;
+    }
+
+    activeCommandIndex = (activeCommandIndex + delta + filteredCommands.length) % filteredCommands.length;
+    renderCommandList();
+  }
+
+  function runActiveCommand() {
+    const command = filteredCommands[activeCommandIndex];
+
+    if (!command) {
+      return;
+    }
+
+    closeCommandPalette();
+    command.run();
+  }
+
+  function renderCommandList() {
+    const query = commandInput.value.trim().toLowerCase();
+    filteredCommands = getCommands().filter((command) => commandMatches(command, query));
+    activeCommandIndex = Math.min(activeCommandIndex, Math.max(filteredCommands.length - 1, 0));
+    commandList.innerHTML = filteredCommands.map((command, index) => `
+      <button class="command-palette__item${index === activeCommandIndex ? " is-active" : ""}" type="button" role="option" aria-selected="${index === activeCommandIndex}" data-command-index="${index}">
+        <span>
+          <span class="command-palette__title">${escapeHtml(command.title)}</span>
+          <span class="command-palette__detail">${escapeHtml(command.detail)}</span>
+        </span>
+        <span class="command-palette__hint">${escapeHtml(command.hint)}</span>
+      </button>
+    `).join("");
+    commandEmpty.classList.toggle("is-visible", filteredCommands.length === 0);
+  }
+
+  function commandMatches(command, query) {
+    if (!query) {
+      return true;
+    }
+
+    const searchable = [command.title, command.detail, command.hint].concat(command.aliases || []).join(" ").toLowerCase();
+    return searchable.includes(query);
+  }
+
+  function escapeHtml(value) {
+    return value.replace(/[&<>"']/g, (character) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    }[character]));
   }
 
   function handleGameKeydown(event) {

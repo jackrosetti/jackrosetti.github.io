@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en" class="h-100">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Daily Math">
+  <meta property="og:description" content="Insight Economics Senior Analyst">
+
+  <title>Daily Math</title>
+  <meta name="description" content="Insight Economics Senior Analyst">
+
+  <link rel="shortcut icon" type="image/x-icon" href="../assets/jr.png">
+
+  <script src="../assets/js/theme.js"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]]
+      },
+      svg: {
+        fontCache: "global"
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script defer src="../assets/js/daily-math.js"></script>
+
+</head>
+
+<body class="h-100 d-flex flex-column">
+
+  <main class="flex-shrink-0 container mt-5">
+    <nav class="navbar navbar-expand-lg navbar-themed">
+
+  <a class="navbar-brand" href="../index.html"><h5><b>Jack Rosetti</b></h5></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-1x fa-bars text-themed"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link" href="../files/Rosetti_Resume.pdf">CV</a>
+      <a class="nav-item nav-link" href="../research/index.html">Research</a>
+      <a class="nav-item nav-link" href="../teaching/index.html">Teaching</a>
+      <a class="nav-item nav-link" href="../about/index.html">About</a>
+      <span id="theme-toggler" class="nav-item nav-link" role="button" onclick="toggleTheme()"></span>
+    </div>
+  </div>
+
+</nav>
+
+    <div class="col-lg-10 mx-auto mt-5 daily-math" data-daily-math>
+
+      <div class="daily-math__header wow animated fadeIn" data-wow-delay=".05s">
+        <div>
+          <p class="section-label">Hidden Daily Math</p>
+          <h1>Integral + Diff Eq of the Day</h1>
+        </div>
+        <div class="daily-math__date" data-math-date></div>
+      </div>
+
+      <div class="daily-math__grid wow animated fadeIn" data-wow-delay=".1s">
+        <section class="daily-problem" data-problem-card="integral">
+          <div class="daily-problem__topline">
+            <span>Integral</span>
+            <span data-problem-index></span>
+          </div>
+          <div class="daily-problem__topic" data-problem-topic></div>
+          <div class="daily-problem__prompt" data-problem-prompt></div>
+          <div class="daily-problem__actions">
+            <button class="btn btn-sm btn-outline-primary" type="button" data-solution-toggle aria-expanded="false">Show solution</button>
+            <button class="btn btn-sm btn-outline-secondary" type="button" data-random-problem>Another</button>
+          </div>
+          <div class="daily-problem__solution" data-problem-solution hidden>
+            <p data-problem-method></p>
+            <div data-problem-answer></div>
+          </div>
+        </section>
+
+        <section class="daily-problem" data-problem-card="diffeq">
+          <div class="daily-problem__topline">
+            <span>Diff Eq</span>
+            <span data-problem-index></span>
+          </div>
+          <div class="daily-problem__topic" data-problem-topic></div>
+          <div class="daily-problem__prompt" data-problem-prompt></div>
+          <div class="daily-problem__actions">
+            <button class="btn btn-sm btn-outline-primary" type="button" data-solution-toggle aria-expanded="false">Show solution</button>
+            <button class="btn btn-sm btn-outline-secondary" type="button" data-random-problem>Another</button>
+          </div>
+          <div class="daily-problem__solution" data-problem-solution hidden>
+            <p data-problem-method></p>
+            <div data-problem-answer></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="daily-math__bank" data-bank-counts></div>
+
+    </div>
+
+  </main>
+
+  <footer class="mt-auto py-3 text-center">
+
+  <div class="container-fluid justify-content-center">
+    <a class="social mx-1" href="mailto:jackrosetti@gmail.com"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#db4437'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fas fa-envelope fa-2x"></i>
+    </a>
+    <a class="social mx-1" href="https://www.github.com/jackrosetti"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#333333'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-github fa-2x"></i>
+    </a>
+  </div>
+
+</footer>
+
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+  <script> new WOW().init(); </script>
+
+  <script>
+  $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+  })
+  </script>
+
+  <script src="../assets/js/lightcycle.js"></script>
+
+</body>
+
+</html>
