@@ -1,0 +1,120 @@
+.problem-switcher {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: -0.25rem 0 1rem;
+}
+
+.problem-switcher__button {
+  min-height: 42px;
+  border: 1px solid rgba(0, 123, 255, 0.28);
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  padding: 0.55rem 0.65rem;
+}
+
+.problem-switcher__button:hover,
+.problem-switcher__button:focus {
+  border-color: #007bff;
+  color: #007bff;
+  outline: none;
+}
+
+.problem-switcher__button.is-active {
+  background: #007bff;
+  border-color: #007bff;
+  color: #ffffff;
+}
+
+.daily-math__grid {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.daily-problem.is-proof .daily-problem__prompt {
+  display: block;
+  min-height: 0;
+  line-height: 1.65;
+  padding: 0.85rem;
+}
+
+.daily-problem.is-proof .daily-problem__solution {
+  line-height: 1.65;
+}
+
+.daily-problem.is-proof .daily-problem__prompt p,
+.daily-problem.is-proof [data-problem-answer] p {
+  margin: 0 0 0.72rem;
+}
+
+.daily-problem.is-proof .daily-problem__prompt p:last-child,
+.daily-problem.is-proof [data-problem-answer] p:last-child {
+  margin-bottom: 0;
+}
+
+.daily-problem.is-proof [data-problem-answer] p {
+  color: inherit;
+  font-size: 0.95rem;
+}
+
+.daily-problem.is-proof [data-problem-method] {
+  color: #6c757d;
+  font-size: 0.88rem;
+}
+
+[data-theme="dark"] .problem-switcher__button {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+[data-theme="dark"] .problem-switcher__button:hover,
+[data-theme="dark"] .problem-switcher__button:focus {
+  border-color: rgba(255, 255, 255, 0.48);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="dark"] .problem-switcher__button.is-active {
+  background: rgba(0, 123, 255, 0.82);
+  border-color: rgba(0, 123, 255, 0.9);
+  color: #ffffff;
+}
+
+body.retro-academic-active .problem-switcher__button {
+  border-color: rgba(125, 255, 157, 0.38);
+  color: #7dff9d;
+  font-family: "Courier New", Courier, monospace;
+  text-transform: uppercase;
+}
+
+body.retro-academic-active .problem-switcher__button.is-active,
+body.retro-academic-active .problem-switcher__button:hover,
+body.retro-academic-active .problem-switcher__button:focus {
+  background: #7dff9d;
+  border-color: #7dff9d;
+  color: #06140a;
+  text-shadow: none;
+}
+
+body.retro-academic-active .daily-problem.is-proof [data-problem-method] {
+  color: #93dca4 !important;
+}
+
+@media (max-width: 760px) {
+  .problem-switcher {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .problem-switcher__button {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+
+  .daily-problem.is-proof .daily-problem__prompt {
+    padding: 0.7rem;
+  }
+}
